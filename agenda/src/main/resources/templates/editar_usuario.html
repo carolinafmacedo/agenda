@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Atualizar Usuário</title>
+</head>
+<body>
+
+<div th:replace="~{navbar :: menu}"></div>
+
+<h2>Atualizar Dados Pessoais</h2>
+
+<form method="post" th:action="@{/usuario/editar}" th:object="${usuario}">
+    <input type="hidden" th:field="*{id}"/>
+
+    <table class="table">
+        <tr>
+            <th>Nome</th>
+            <td><input type="text" th:field="*{nome}" class="form-control"/></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td><input type="email" th:field="*{username}" class="form-control"/></td>
+        </tr>
+        <tr>
+            <th>Senha</th>
+            <td><input type="password" th:field="*{senha}" class="form-control"/></td>
+        </tr>
+        <tr>
+            <th>Rua</th>
+            <td><input type="text" th:field="*{rua}" class="form-control"/></td>
+        </tr>
+        <tr>
+            <th>Cidade</th>
+            <td><input type="text" th:field="*{cidade}" class="form-control"/></td>
+        </tr>
+        <tr>
+            <th>Estado</th>
+            <td><input type="text" th:field="*{estado}" class="form-control"/></td>
+        </tr>
+    </table>
+
+    <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+</form>
+
+<div th:replace="~{navbar :: bootstrap}"></div>
+
+</body>
+</html>
+
